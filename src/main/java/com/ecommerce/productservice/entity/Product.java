@@ -1,16 +1,19 @@
 package com.ecommerce.productservice.entity;
 
 import lombok.Data;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document("sub-category")
+@Document("product")
 @Data
-public class SubCategory {
+public class Product {
+    @Id
     private String id;
     private String name;
-    private String description;
+    private int availableCount;
+    private double price;
 
     @DBRef
-    private Category category;
+    private SubCategory subCategory;
 }
