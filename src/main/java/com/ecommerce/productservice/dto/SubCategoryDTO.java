@@ -3,7 +3,7 @@ package com.ecommerce.productservice.dto;
 import lombok.Data;
 
 @Data
-public class SubCategory {
+public class SubCategoryDTO {
 
     private String id;
     private String name;
