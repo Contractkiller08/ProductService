@@ -15,9 +15,7 @@ public class CategoryService {
 
     // Creation of Category
     public Category createCategory(CategoryDTO categoryDTO){
-        Category newcategory = new Category();
-        newcategory.setName(categoryDTO.getName());
-        newcategory.setDescription(categoryDTO.getDescription());
+        var newcategory = Category.builder().name(categoryDTO.getName()).description(categoryDTO.getDescription()).build();
 
         return categoryRepository.save(newcategory);
     }
