@@ -3,6 +3,7 @@ package com.ecommerce.productservice.controller;
 import com.ecommerce.productservice.dto.CategoryDTO;
 import com.ecommerce.productservice.entity.Category;
 import com.ecommerce.productservice.service.CategoryService;
+import com.ecommerce.productservice.service.impl.CategoryServiceImpl;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,7 +12,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/category")
