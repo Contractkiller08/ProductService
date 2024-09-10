@@ -10,6 +10,7 @@ public class ProductDTO{
     @NotEmpty(message = "name can't be empty")
     private String name;
     private int availableCount;
+    @NotEmpty(message = "Price can't be empty")
     private double price;
     private String subCategoryId;
 }
