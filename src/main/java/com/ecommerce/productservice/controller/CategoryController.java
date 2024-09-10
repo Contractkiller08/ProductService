@@ -50,7 +50,7 @@ public class CategoryController {
             Category updatedCategory = categoryService.updateCategory(categoryId, categoryDTO);
             return new ResponseEntity<>(updatedCategory, HttpStatus.OK);
         }catch (Exception ex){
-            return new ResponseEntity<>("Internal Server Error", HttpStatus.INTERNAL_SERVER_ERROR);
+            return new ResponseEntity<>("Internal Server Error", HttpStatus.INTERNAL_SERVER_ERROR);//
         }
     }
 

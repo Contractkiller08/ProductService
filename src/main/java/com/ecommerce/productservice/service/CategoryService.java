@@ -7,7 +7,4 @@ public interface CategoryService {
 
     Category createCategory(CategoryDTO categoryDTO);
     Category updateCategory(String categoryId, CategoryDTO categoryDTO);
-
-
-
 }
