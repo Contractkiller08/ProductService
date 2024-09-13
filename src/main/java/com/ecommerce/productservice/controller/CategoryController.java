@@ -11,6 +11,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -52,6 +53,21 @@ public class CategoryController {
         }catch (Exception ex){
             return new ResponseEntity<>("Internal Server Error", HttpStatus.INTERNAL_SERVER_ERROR);//
         }
+    }
+
+    //Fetch all category
+    @GetMapping("/categories")
+    public ResponseEntity<?> fetchAllCategory(){
+        List<Category> categorieList = categoryService.getAllCategories();
+        return new ResponseEntity<>(categorieList, HttpStatus.OK);
+    }
+
+    //Delete a category
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> deleteCategory(@PathVariable String id){
+        //pass this id to service layer
+        categoryService.deleteById(id);
+        return ResponseEntity.ok("Category deleted successfully");
     }
 
 }

@@ -7,6 +7,7 @@ import com.ecommerce.productservice.repository.CategoryRepository;
 import com.ecommerce.productservice.service.CategoryService;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -39,6 +40,17 @@ public class CategoryServiceImpl implements CategoryService {
         }else{
             throw new CategoryNotFoundException("Category with ID " + categoryId + " not found.");
         }
+    }
+
+    //Fetch all categories
+    public List<Category> getAllCategories(){
+        return categoryRepository.findAll();
+    }
+
+    //delete the category
+
+    public void deleteById(String id){
+        categoryRepository.deleteById(id);
     }
 
 }
